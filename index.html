@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="datepicker/css/bootstrap-datepicker.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="jquery-3.4.1.js"></script>
+    <script src="datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="leaveform.js"></script>
+    <title>Leave Application</title>
+</head>
+<body>
+    <div class="container mt-3">
+        <h1 class="text-center"><strong>Synesis IT</strong> <img src="img/synesisit48.jpg" alt="logo" width="46" height="42"></h1>
+        <h3 class="text-center mb-3">Leave Application Form</h3>
+        <div id="leave-app-employee-section">
+            <form class="border" action="leaveapp.php" method="POST">
+                <!-- company department checkbox section -->
+                <div class="row ml-1">
+                    <div class="custom-control custom-checkbox col-sm-1">
+                        <input type="checkbox" class="custom-control-input" id="SIL" name="SIL">
+                        <label class="custom-control-label" for="SIL">SIL</label>
+                    </div>
+                    <div class="custom-control custom-checkbox col-sm-1">
+                        <input type="checkbox" class="custom-control-input" id="TB" name="TB">
+                        <label class="custom-control-label" for="TB">TB</label>
+                    </div>
+                    <div class="custom-control custom-checkbox col-sm-1">
+                        <input type="checkbox" class="custom-control-input" id="MT" name="MT">
+                        <label class="custom-control-label" for="MT">MT</label>
+                    </div>
+                    <div class="custom-control custom-checkbox col-sm-1">
+                        <input type="checkbox" class="custom-control-input" id="SB" name="SB">
+                        <label class="custom-control-label" for="SB">SB</label>
+                    </div>
+                </div>
+                
+                <!-- employee name/designation/department section -->
+                <div class="container mt-1">
+                    <div class="row" >
+                        <div class="col-sm-6 text-center bg-light border border-bottom-0 border-left-0">
+                            <label class="control-label"><b>NAME OF THE EMPLOYEE</b></label>
+                        </div>
+                        <div class="col-sm-3 text-center bg-light border border-bottom-0">
+                            <label class="control-label"><b>DESIGNATION</b></label>
+                        </div>
+                        <div class="col-sm-3 text-center bg-light border border-bottom-0 border-right-0">
+                            <label class="control-label"><b>DEPARTMENT</b></label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <input class="disabled col-sm-6 form-control rounded-0 border border-left-0 text-center" type="text" id="employee_name" name="employee_name" placeholder="Dhiman Kumar Sarker">
+                        <input class="col-sm-3 form-control rounded-0 border text-center" type="text" id="employee_designation" name="employee_designation" placeholder="Programmer">
+                        <input class="col-sm-3 form-control rounded-0 border border-right-0 text-center" type="text" id="employee_dept" name="employee_dept" placeholder="Software Implementation">
+                    </div>                
+                    
+                    <br>
+                    <div class="row">
+                        <!-- period/purpose/address/contact/duties section -->
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <label class="col-sm-4 control-label mt-2">Period of Leave: <span id="leave_period" class="badge badge-info">days</span></label>
+                                <div class="col-sm-8 input-group">
+                                    <div class="date" data-provide="datepicker">
+                                        <input id="dateinput_from" name="dateinput_from" type="text" class="form-control datepicker rounded-0 border-left-0 border-right-0 border-top-0 text-center" placeholder="From" required>
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
+                                    <span class="mt-2">:</span>
+                                    <div class="date" data-provide="datepicker">
+                                        <input id="dateinput_to" name="dateinput_to" type="text" class="form-control datepicker rounded-0 border-left-0 border-right-0 border-top-0 text-center" placeholder="To" required>
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <label class="col-sm-4 control-label mt-2">Purpose of Leave: </label>
+                                <input type="text" id="leave_purpose" name="leave_purpose" class="col-sm-8 form-control rounded-0 border-left-0 border-right-0 border-top-0" required>
+                            </div>
+
+                            <div class="row">
+                                <label class="col-sm-4 control-label mt-2">Address on Leave: </label>
+                                <input type="text" id="leave_address" name="leave_address" class="col-sm-8 form-control rounded-0 border-left-0 border-right-0 border-top-0" required>
+                            </div>
+
+                            <div class="row">
+                                <label class="col-sm-4 control-label mt-2">Contact: </label>
+                                <input type="text" id="employee_contact" name="employee_contact" class="col-sm-8 form-control rounded-0 border-left-0 border-right-0 border-top-0" required>
+                            </div>
+
+                            <div class="row">
+                                <label class="col-sm-4 control-label mt-2">Duties will be carried out by: </label>
+                                <input type="text" id="duties_carried_by" name="duties_carried_by" class="col-sm-8 form-control rounded-0 border-left-0 border-right-0 border-top-0" required>
+                            </div>
+
+                            <!-- supervisor select -->
+                            <div class="row">
+                                <label for="supervisor_select" class="col-sm-4 control-label mt-2">Supervisor</label>
+                                <select class="col-sm-8 form-control rounded-0 border-left-0 border-right-0 border-top-0" id="supervisor_select" name="supervisor_select">
+                                    <option>Select Supervisor</option>
+                                    <option>Shoikot Chowdhury</option>
+                                    <option>Mainul Hasan</option>
+                                    <option>Masud Rahman</option>
+                                </select>
+                            </div>
+
+                            <!-- HOD select -->
+                            <div class="row mb-2">
+                                <label for="hod_select" class="col-sm-4 control-label mt-2">Department Head</label>
+                                <select class="col-sm-8 form-control rounded-0 border-left-0 border-right-0 border-top-0" id="hod_select" name="hod_select">
+                                    <option>Select HOD</option>
+                                    <option>Shah Jalal</option>
+                                    <option>Shoikot Chowdhury</option>
+                                    <option>Mainul Hasan</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Leave Balance Table Section -->
+                        <div class="col-sm-4">
+                            <div class="container">
+                                <div class="d-flex flex-column ">
+                                    <div class="row border bg-info flex-fill">
+                                        <label class="control-label mx-auto d-block" style="font-size:0.8rem;"><b>Leave (No. of days)</b></label>
+                                    </div>
+
+                                    <!-- overflow-x: visible|hidden|scroll|auto|initial|inherit; -->
+                                    <div class="row" style="overflow-x: auto;">
+                                        <table class="table table-sm table-bordered text-center" id="table_leave_balance" style="font-size:0.7rem;">	
+                                            <thead>
+                                                <tr>
+                                                    <th>Casual</th>
+                                                    <th>Sick</th>
+                                                    <th>Earned</th>
+                                                    <th>Maternity</th>
+                                                    <th>Other</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>12</td>
+                                                    <td>12</td>
+                                                    <td>0</td>
+                                                    <td>2</td>
+                                                    <td>0</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>    
+
+
+                    <br>
+                    <!-- signature of employee section -->
+                    <input type="text" id="employee_signature" name="employee_signature" class="col-sm-4 form-control rounded-0 border-left-0 border-right-0 border-top-0" required>
+                    <label class="col-sm-4 control-label mt-2">Signature of the employee (Applicant) </label>
+
+                    <!-- form submit section -->
+                    <div class="form group text-right">
+                        <input type="submit" class="btn btn-success mb-2" id="submit_button" name="submit_button">
+                        <input type="reset"  class="btn btn-warning mb-2" id="reset_button"  name="reset_button">
+                    </div>                    
+                </div>
+            </form>
+        </div>
+
+        <!-- Recommendation/Approval/Agreed Section -->
+        <br>
+        <div class="container border">
+            <div class="row">
+                <div class="col-sm-4 border">
+                    <div class="form-group row">
+                        <label class="col-sm-8 control-label" style="font-size:1rem;"><b>Recommended: </b></label>
+                        <label ></label>
+                        <div class="col-sm-2 custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="recomm_yes" value="recomm_yes" name="radio_recommendation" checked>
+                            <label class="custom-control-label" for="recomm_yes">YES</label>
+                        </div>
+                        <div class="col-sm-2 custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="recomm_no" value="recomm_no" name="radio_recommendation">
+                            <label class="custom-control-label" for="recomm_no">NO</label>
+                        </div>                
+                    </div>
+
+                    <!-- signature of supervisor section -->
+                    <input id="signature_supervisor" name="signature_supervisor" type="text" class=" form-control rounded-0 border-left-0 border-right-0 border-top-0" required>
+                    <label class=" control-label mt-2">Signature, Immediate, Supervisor</label>
+     
+                    <br>
+                    <input type="submit" class="form-control btn btn-success mb-2" id="submit_recommendation" name="submit_recommendation">
+                </div>
+
+                <div class="col-sm-4 border">
+                    <div class="form-group row">
+                        <label class="col-sm-8 control-label" style="font-size:1rem;"><b>Approved: </b></label>
+                        <label ></label>
+                        <div class="col-sm-2 custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="approved_yes" value="approved_yes" name="radio_approval" checked>
+                            <label class="custom-control-label" for="approved_yes">YES</label>
+                        </div>
+                        <div class="col-sm-2 custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="approved_no" value="approved_no" name="radio_approval">
+                            <label class="custom-control-label" for="approved_no">NO</label>
+                        </div>                
+                    </div>
+
+                    <!-- signature of HOD section -->
+                    <input id="signature_hod" name="signature_hod" type="text" class="form-control rounded-0 border-left-0 border-right-0 border-top-0" required>
+                    <label class="control-label mt-2">Signature, HOD/Next Supervisor</label>
+     
+                    <br>
+                    <input type="submit" class="form-control btn btn-success mb-2" id="submit_approval" name="submit_approval">
+                </div>
+
+
+                <div class="col-sm-4 border">
+                    <div class="form-group row">
+                        <label class="col-sm-8 control-label" style="font-size:1rem;"><b>Agreed: </b></label>
+                        <label ></label>
+                        <div class="col-sm-2 custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="agreed_yes" value="agreed_yes" name="radio_agree" checked>
+                            <label class="custom-control-label" for="agreed_yes">YES</label>
+                        </div>
+                        <div class="col-sm-2 custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" id="agreed_no" value="agreed_no" name="radio_agree">
+                            <label class="custom-control-label" for="agreed_no">NO</label>
+                        </div>                
+                    </div>
+
+                    <!-- signature of HR Admin section -->
+                    <input id="signature_hr" name="signature_hr" type="text" class="form-control rounded-0 border-left-0 border-right-0 border-top-0" required>
+                    <label class="control-label mt-2">Signature, Head of HR & Admin</label>
+     
+                    <br>
+                    <input type="submit" class="form-control btn btn-success mb-2" id="submit_agree" name="submit_agree">
+                </div>
+
+            </div>
+        </div>
+        <br>
+
+        <div class="container border">
+            <!-- leave status section -->
+            <p><b>Leave status: </b></p>
+            <div class="container table-responsive-sm mt-2">
+                <div class="row">
+                    <table class="table table-sm table-bordered text-center" id="table_leavestatus" style="font-size:0.8rem;">	
+                        <thead class="border border-0">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Casual</th>
+                                <th scope="col">Sick</th>
+                                <th scope="col">Earned</th>
+                                <th scope="col">Maternity</th>
+                                <th scope="col">Other</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Available</th>
+                                <td>12</td>
+                                <td>12</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Approved</th>
+                                <td>12</td>
+                                <td>12</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Due</th>
+                                <td>12</td>
+                                <td>12</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>    
+            
+            <div class="row">
+                <div class="col-sm-5">
+                    <input id="leave_status_check" type="text" class=" form-control rounded-0 border-left-0 border-right-0 border-top-0" required>
+                    <label class="control-label mt-1">Checked By</label>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div id="leave-app-hr-admin-section">
+            <form class="border">
+                <!-- company department checkbox section -->
+                <div class="row ml-1">
+                    <div class="custom-control custom-checkbox col-sm-1">
+                        <input type="checkbox" class="custom-control-input" id="SIL2" name="SIL2">
+                        <label class="custom-control-label" for="SIL2">SIL</label>
+                    </div>
+                    <div class="custom-control custom-checkbox col-sm-1">
+                        <input type="checkbox" class="custom-control-input" id="TB2" name="TB2">
+                        <label class="custom-control-label" for="TB2">TB</label>
+                    </div>
+                    <div class="custom-control custom-checkbox col-sm-1">
+                        <input type="checkbox" class="custom-control-input" id="MT2" name="MT2">
+                        <label class="custom-control-label" for="MT2">MT</label>
+                    </div>
+                    <div class="custom-control custom-checkbox col-sm-1">
+                        <input type="checkbox" class="custom-control-input" id="SB2" name="SB2">
+                        <label class="custom-control-label" for="SB2">SB</label>
+                    </div>
+                </div>
+                
+                <!-- employee name/designation/department section -->
+                <div class="container mt-1">
+                    <div class="row" >
+                        <div class="col-sm-6 text-center bg-light border border-bottom-0 border-left-0">
+                            <label class="control-label"><b>NAME OF THE EMPLOYEE</b></label>
+                        </div>
+                        <div class="col-sm-3 text-center bg-light border border-bottom-0">
+                            <label class="control-label"><b>DESIGNATION</b></label>
+                        </div>
+                        <div class="col-sm-3 text-center bg-light border border-bottom-0 border-right-0">
+                            <label class="control-label"><b>DEPARTMENT</b></label>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <input class="disabled col-sm-6 form-control rounded-0 border border-left-0 text-center" type="text" id="employee_name2" name="employee_name2" placeholder="Dhiman Kumar Sarker">
+                        <input class="col-sm-3 form-control rounded-0 border text-center" type="text" id="employee_designation2" name="employee_designation2" placeholder="Programmer">
+                        <input class="col-sm-3 form-control rounded-0 border border-right-0 text-center" type="text" id="employee_dept2" name="employee_dept2" placeholder="Software Implementation">
+                    </div>                
+                    
+                    <br>
+                    <div class="row">
+                        <!-- period/purpose/address/contact/duties section -->
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <label class="col-sm-4 control-label mt-2">Period of Leave: <span id="period_days" class="badge badge-info">days</span></label>                        
+                                <div class="col-sm-8 input-group mb-2">
+                                    <input id="dateshow_from" type="text" class="form-control rounded-0 border-left-0 border-right-0 border-top-0 text-center">
+                                    <span class="mt-2">:</span>
+                                    <input id="dateshow_to" type="text" class="form-control rounded-0 border-left-0 border-right-0 border-top-0 text-center">            
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Leave Balance Table Section -->
+                        <div class="col-sm-6">
+                            <div class="container">
+                                <div class="d-flex flex-column">
+                                    <div class="row border flex-fill bg-info">
+                                        <label class="control-label mx-auto d-block" style="font-size:0.8rem;"><b>Leave (No. of days)</b></label>
+                                    </div>
+
+                                    <!-- overflow-x: visible|hidden|scroll|auto|initial|inherit; -->
+                                    <div class="row" style="overflow-x: auto;">
+                                        <table class="table table-sm table-bordered text-center" id="table_remaining_leave" style="font-size:0.7rem;">	
+                                            <thead>
+                                                <tr>
+                                                    <th>Casual</th>
+                                                    <th>Sick</th>
+                                                    <th>Earned</th>
+                                                    <th>Maternity</th>
+                                                    <th>Other</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>12</td>
+                                                    <td>12</td>
+                                                    <td>0</td>
+                                                    <td>2</td>
+                                                    <td>0</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+
+                    <!-- signature section -->
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <input id="leave_checked_by" name="leave_checked_by" type="text" class="form-control rounded-0 border-left-0 border-right-0 border-top-0" required>
+                            <label class="control-label mt-1">Checked By</label>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <input id="signature_admin" name="signature_admin" type="text" class="form-control rounded-0 border-left-0 border-right-0 border-top-0" required>
+                            <label class="control-label mt-1 text-center">Signature, HR & Admin</label>
+                        </div>
+                    </div>
+
+                    <!-- form submit section -->
+                    <div class="form group text-right">
+                        <input type="submit" class="btn btn-success mb-2" id="submit_button2" name="submit_button2">
+                        <input type="reset"  class="btn btn-warning mb-2" id="reset_button2"  name="reset_button2">
+                    </div>  
+
+                </div>
+            </form>
+        </div>
+        <br>
+
+
+    </div>
+</body>
+</html>
